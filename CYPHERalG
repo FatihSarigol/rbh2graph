@@ -1,0 +1,6 @@
+LOAD CSV WITH HEADERS FROM
+'file:///SP.alg' AS row
+MERGE(ChrSP:CHRSP{name:row.ChromosomeSP})
+MERGE(Alg:ALG{name:row.ALG})
+MERGE(ChrSP)-[:orthologous]-(Alg);
+RETURN "SP.alg loaded" AS `File:`;

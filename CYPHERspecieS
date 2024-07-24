@@ -1,0 +1,6 @@
+LOAD CSV WITH HEADERS FROM
+'file:///SP.species' AS row
+MERGE(ChrSP:CHRSP{name:row.Chromosome, Species:row.Species, TaxID:row.TaxID, Assembly:row.Assembly, Lineage:row.Lineage})
+MERGE(GeneSP:GENESP{name:row.Gene, Species:row.Species, CoordinateStart:toInteger(row.CoordinateStart), TaxID:row.TaxID, Assembly:row.Assembly, Lineage:row.Lineage, Chromosome:row.Chromosome})
+MERGE(GeneSP)-[:location]->(ChrSP);
+RETURN "SP.species loaded" AS `File:`;

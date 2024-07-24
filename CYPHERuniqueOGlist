@@ -1,0 +1,6 @@
+LOAD CSV WITH HEADERS FROM
+'file:///OGs' AS row
+MERGE(Alg:ALG{name:row.ALG})
+MERGE(Og:OG{name:row.OG, alg:row.ALG})
+MERGE(Og)-[:location]->(Alg);
+RETURN "OGs loaded" AS `File:`;

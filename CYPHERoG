@@ -1,0 +1,6 @@
+LOAD CSV WITH HEADERS FROM
+'file:///SP.og' AS row
+MERGE(GeneSP:GENESP{name:row.GeneSP})
+MERGE(Og:OG{name:row.OG})
+MERGE(GeneSP)-[:orthologous]-(Og);
+RETURN "SP.og loaded" AS `File:`;

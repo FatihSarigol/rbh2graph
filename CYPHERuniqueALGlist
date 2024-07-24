@@ -1,0 +1,4 @@
+LOAD CSV WITH HEADERS FROM
+'file:///ALGs' AS row
+MERGE(Alg:ALG{name:row.ALG});
+RETURN "ALGs loaded" AS `File:`;
