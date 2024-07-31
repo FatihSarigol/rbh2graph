@@ -1,6 +1,8 @@
 # rbh2graph
 Download the repository and run it as:
+
 bash ./rbh2graph.sh
+
 The example files will be used to generate example output files.
 
 If you use rbh2graph, please cite this study:
