@@ -7,11 +7,13 @@ rbh2graph uses standard features of most Unix-like operating systems such as sed
 Neo4j Community Edition server v.5.20.0 was used to host the database, and Neo4j Browser v.5.15.0 was used to illustrate the data. However, neither is a dependency of rbh2graph, you can use the Cypher code that it will generate to load the node description and orthology connection files it will create to a local NEO4J installation on Linux, macOS, or Windows, or to NEO4J Sandbox online.
 
 
+
 **2. Installation guide**
 
 Simply download the rbh2graph repository, no installation is required:
 
 `git clone https://github.com/FatihSarigol/rbh2graph`
+
 
 
 **3. Demo**
@@ -27,6 +29,7 @@ For each 7 unique species, this will generate 3 files that start with the TaxID 
 It will also generate these 3 other files: ALGs OGs CypherCode
 
 It should finish running only within a few seconds.
+
 
 
 **4. Instructions for use**
@@ -49,10 +52,12 @@ Which will create the files that will be loaded to NEO4J, and a single Cypher sc
 
 
 Once rbh2graph finishes running, transfer all .species .og .alg files together with ALGs and OGs files to /var/lib/neo4j/import on your server (or to another directory if your import directory is defined differently in your neo4j.conf file) and run the script named CypherCode that was generated, using cypher-shell from neo4j server installation as below (change the variables defined for -u -p -d and -a based on your server and Neo4J installation):
+
 `cypher-shell -u user -p password -d database -a neo4j://serverIP:port -f CypherCode`
 
 Your graph database should be ready.
 Please refer to our manuscript to see our graph database live and to try example queries investigating various topological questions.
+
 
 
 
