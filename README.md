@@ -67,3 +67,8 @@ If you use rbh2graph in your study, please cite our manuscript:
 > Schultz, D.T., Blümel, A., Destanović, D., Sarigol, F., & Simakov, O. (2024).
 > Topological mixing and irreversibility in animal chromosome evolution.
 > *bioRxiv*, 2024.07.29.605683. [https://doi.org/10.1101/2024.07.29.605683](https://doi.org/10.1101/2024.07.29.605683)
+> 
+
+## License
+This project is licensed under the GNU GPL v3.0 — see the `LICENSE` file for details.
+
